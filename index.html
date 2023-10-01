@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Villor</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -16,7 +16,7 @@
 <body>
   <div class="mainpage">
     <header>
-      <a href="index.html">
+      <a href="/">
         <div class="logo">
           <div class="img-logo">
             <div class="img-logo1"></div>
@@ -27,38 +27,55 @@
           <p>Villor</p>
         </div>
       </a>
+      <nav class="nav">
+        <ul>
+          <li>Ridji</li>
+          <li>Ilidji</li>
+        </ul>
+      </nav>
+      <div class="burger">
+        <span></span>
+      </div>
     </header>
   
     <section>
       <div class="content">
-        <div class="card">
+
+        <div class="card card-reverse">
           <div class="text">
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias error mollitia hic eum magnam veritatis assumenda, necessitatibus quam ratione nulla dolor, ab omnis alias placeat! Inventore iure quae id eum.</p>
           </div>
           <div class="video">
-            <video src="source/videos/video1.mp4" controls loop muted autoplay></video>
+            <video src="source/videos/video1.mp4" loop muted autoplay></video>
           </div> 
-  
         </div>
+
         <div class="card">
           <div class="video">
-            <video src="source/videos/video2.mp4" controls loop muted autoplay></video>
+            <video src="source/videos/video2.mp4" loop muted autoplay></video>
           </div>
           <div class="text">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et eligendi tenetur ab tempore ipsum. Modi voluptate eveniet autem blanditiis ab adipisci ratione accusantium quod, iusto possimus unde cumque deserunt voluptatem?
           </div>
-  
         </div>
-        <div class="card">
+
+        <div class="card card-reverse">
           <div class="text">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam inventore consequuntur facilis delectus illo dolor reprehenderit autem libero nam. Nam quasi voluptate tempore soluta consectetur nisi dolores iste magnam optio?
           </div>
           <div class="video">
             <video src="source/videos/video3.mp4" loop muted autoplay></video>
           </div>
-  
         </div>
-  
+
+        <div class="card">
+          <div class="video">
+            <video src="source/videos/video4.mp4" loop muted autoplay></video>
+          </div>
+          <div class="text">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et eligendi tenetur ab tempore ipsum. Modi voluptate eveniet autem blanditiis ab adipisci ratione accusantium quod, iusto possimus unde cumque deserunt voluptatem?
+          </div>
+        </div>
       </div>
     </section>
   
@@ -70,7 +87,12 @@
 
 
 
-
+  <script>
+    document.querySelector('.burger').addEventListener('click', function() {
+      this.classList.toggle('active');
+      document.querySelector('.nav').classList.toggle('open');
+    })
+  </script>
 </body>
 
 </html>
