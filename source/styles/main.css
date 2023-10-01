@@ -25,11 +25,17 @@ body {
 
 header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header a {
   text-decoration: none;
   color: #442e2e;
+}
+
+.open {
+  display: flex !important;
 }
 
 .logo {
@@ -74,7 +80,86 @@ header a {
   border-radius: 0 2px 2px 0;
 }
 
+.nav {
+  display: flex;
+  width: 250px;
+  padding: 0 40px;
+}
 
+.nav ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.burger {
+  display: flex;
+  position: relative;
+  z-index: 50;
+  align-items: center;
+  justify-content: flex-end;
+  width: 30px;
+  height: 18px;
+}
+
+.burger span {
+  height: 2px;
+  width: 80%;
+  transform: scale(1);
+  background-color: #442e2e;
+}
+
+.burger::before, .burger::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: #442e2e;
+  transition: all 0.3s ease 0s;
+}
+
+.burger::before { top: 0}
+
+.burger::after { bottom: 0}
+
+.burger.active span { transform: scale(0) }
+
+.burger.active::before {
+  top: 50%;
+  transform: rotate(-45deg) translate(0, -50%);
+}
+
+.burger.active::after {
+  bottom: 50%;
+  transform: rotate(45deg) translate(0, 50%);
+}
+
+.nav {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  height: 185px;
+  width: 50%;
+  max-width: 1000px;
+  border-radius: 25px;
+  top: 0; right: 28.6%;
+  z-index: 1;
+  /* overflow-y: auto; */
+  padding: 30px 40px;
+  background-color: rgb(141, 109, 109);
+  animation: burgerAnimation 0.4s;
+}
+
+.nav ul {
+  flex-direction: column;
+  gap: 15px;
+}
+  
+@keyframes burgerAnimation {
+  from {opasity: 0}
+  to {opasity: 1}
+}
 
 .content {
   display: flex;
@@ -98,3 +183,41 @@ header a {
   width: 890px;
   border-radius: 15px;
 }
+
+@media (max-width: 5700px) {
+  .nav {right: 21.5%;}
+}
+
+@media (max-width: 3800px) {
+  .nav {right: 7%;}
+}
+
+@media (max-width: 1300px) {
+  .card {
+    flex-direction: column;
+  }
+
+  .card-reverse {
+    flex-direction: column-reverse
+  }
+}
+
+@media (max-width: 1075px) {
+  .card .video video {
+    width: 100%;
+  }
+
+  .card .text {
+    padding: 0;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 750px) {
+  .nav {
+  width: 86.1%;
+  font-size: 15px;
+  }
+
+}
+
