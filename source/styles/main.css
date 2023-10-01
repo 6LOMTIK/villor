@@ -8,7 +8,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-	background: linear-gradient(90deg, #cfecd0, #ffc5ca);
+  background: linear-gradient(90deg, #cfecd0, #ffc5ca);
   font-size: 18px;
   font-weight: 300;
   font-family: 'Kanit', sans-serif;
